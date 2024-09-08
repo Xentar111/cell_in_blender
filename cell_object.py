@@ -6,6 +6,7 @@ from environment import env_size
 
 class Cell:
     def __init__(self):
+        # Asignar posiciones aleatorias dentro del entorno
         self.x = np.random.randint(0, env_size)
         self.y = np.random.randint(0, env_size)
         self.energy = 100
