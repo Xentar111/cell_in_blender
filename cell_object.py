@@ -6,20 +6,18 @@ from environment import env_size
 
 class Cell:
     def __init__(self):
-        # Asignar posiciones aleatorias dentro del entorno
-        self.x = np.random.randint(0, env_size)
-        self.y = np.random.randint(0, env_size)
+        self.x = np.random.randint(0, 100)
+        self.y = np.random.randint(0, 100)
         self.energy = 100
         self.brain = self.create_brain()
 
     def create_brain(self):
-        
-        # Red neuronal simple para la toma de decisiones
         model = Sequential([
-            Dense(16, input_dim=2, activation='relu'),
-            Dense(4, activation='softmax')  # 4 posibles direcciones: arriba, abajo, izquierda, derecha
+            Dense(10, input_dim=2, activation='relu'),
+            Dense(5, activation='relu'),
+            Dense(2, activation='linear')
         ])
-        model.compile(optimizer='adam', loss='categorical_crossentropy')
+        model.compile(optimizer='adam', loss='mse')
         return model
 
     def move(self):
