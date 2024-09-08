@@ -2,3 +2,4 @@
 blender_files/
 output/
 models/
+.venv/
