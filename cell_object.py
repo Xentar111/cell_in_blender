@@ -2,7 +2,7 @@ import numpy as np
 
 from keras.models import Sequential
 from keras.layers import Dense
-from environment import env_size
+from visualizer import env_size
 
 class Cell:
     def __init__(self):

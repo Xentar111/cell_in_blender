@@ -1,0 +1,7 @@
+dame los pasos para crear una celula con keras, necesito:
+- visualizador para ver la celula dibujada en 2d esta bien
+- que la celula busque comida con algun algoritmo de busqueda
+- que haya otras buscando comida y compitan
+- que las que sobreviven al fin de los tiempos pasen los genes a los siguientes, almacenando en algun lado este mismo
+- Randomizar el inicio de las celulas y la comida
+- Guardarlo en .h5 y como puedo hacer para volver a traer esa informacion

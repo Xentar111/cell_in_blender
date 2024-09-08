@@ -21,10 +21,14 @@ for generation in range(100, 200):
         if cell.energy > 0:
             cell.move()
             nearest_food = cell.find_food(food_positions)
-            if np.array_equal([cell.x, cell.y], nearest_food):
+            
+            # Verificar si la célula ha encontrado comida
+            if any(np.array_equal([cell.x, cell.y], food) for food in food_positions):
                 cell.energy += 20
-                food_positions = np.delete(food_positions, np.where(food_positions == nearest_food), axis=0)
+                # Eliminar la comida consumida de las posiciones de comida
+                food_positions = np.array([food for food in food_positions if not np.array_equal([cell.x, cell.y], food)])
     
+    # Dibujar el estado actual del entorno
     draw_environment(cells, food_positions)
     
     # Reproducción: las células con más energía sobreviven y se reproducen
